@@ -1,0 +1,154 @@
+/**
+ * @name Shimmer Street Monkey
+ * @author ꀭꀤꈤꊼ
+ * @version 1.0.0
+ * @description Always With You, Sis.
+*/
+
+@import url('https://clearvision.github.io/ClearVision-v6/main.css');
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff2/JetBrainsMono-Bold.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff/JetBrainsMono-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --main-color: #640d47;
+  --hover-color: #011efe;
+  --success-color: #43b581;
+  --danger-color: #982929;
+  --url-color: var(--main-color);
+  --background-image: url('https://files.catbox.moe/s4sz72.jpg');
+  --background-shading: 120%;
+  --background-position: center;
+  --background-size: cover;
+  --background-repeat: no-repeat;
+  --background-attachment: fixed;
+  --background-brightness: 100%;
+  --background-contrast: 100%;
+  --background-saturation: 100%;
+  --background-grayscale: 0%;
+  --background-invert: 0%;
+  --background-blur: 0px;
+  --background-overlay: rgba(0,0,0,0.6);
+  --user-popout-image: #1a0817;
+  --user-popout-position: center;
+  --user-popout-size: cover;
+  --user-popout-repeat: no-repeat;
+  --user-popout-attachment: fixed;
+  --user-popout-brightness: 100%;
+  --user-popout-contrast: 100%;
+  --user-popout-saturation: 100%;
+  --user-popout-grayscale: 0%;
+  --user-popout-invert: 0%;
+  --user-popout-blur: 3px;
+  --user-modal-image: #1a0817;
+  --user-modal-position: center;
+  --user-modal-size: cover;
+  --user-modal-repeat: no-repeat;
+  --user-modal-attachment: fixed;
+  --user-modal-brightness: 100%;
+  --user-modal-contrast: 100%;
+  --user-modal-saturation: 100%;
+  --user-modal-grayscale: 0%;
+  --user-modal-invert: 0%;
+  --user-modal-blur: 3px;
+  --home-icon: url('https://files.catbox.moe/0st3ki.png');
+  --home-position: center;
+  --home-size: 50px;
+  --channel-unread: var(--main-color);
+  --channel-color: rgba(255,255,255,0.3);
+  --muted-color: rgba(255,255,255,0.1);
+  --online-color: #43b581;
+  --idle-color: #faa61a;
+  --dnd-color: #982929;
+  --streaming-color: #593695;
+  --offline-color: #808080;
+  --main-font: Nunito;
+  --code-font: Jetbrains Mono;
+  --channels-width: 220px;
+  --members-width: 240px;
+  --backdrop-overlay: rgba(0,0,0,0.8);
+  --backdrop-image: var(--background-image);
+  --backdrop-position: var(--background-position);
+  --backdrop-size: var(--background-size);
+  --backdrop-repeat: var(--background-repeat);
+  --backdrop-attachment: var(--background-attachment);
+  --backdrop-brightness: var(--background-brightness);
+  --backdrop-contrast: var(--background-contrast);
+  --backdrop-saturation: var(--background-saturation);
+  --backdrop-invert: var(--background-invert);
+  --backdrop-grayscale: var(--background-grayscale);
+  --backdrop-sepia: var(--background-sepia);
+  --backdrop-blur: var(--background-blur);
+  --bd-blue: var(--main-color);
+  --bd-blue-hover: var(--hover-color);
+  --bd-blue-active: var(--hover-color);
+  --background-message-hover: rgba(61, 26, 56, 0.322);
+}
+
+
+
+/* annoyance killers: -----------------------------------------*/
+[class^=clickable_]:has([alt=" [﷽﷽﷽﷽]"]){display: none}
+[class^=pictureInPicture_], [class^=channelAppLauncher_], [aria-label^='Send a gift'], [class^=footer__2] {
+    display: none;
+}
+/* ------------------------------------------------------------*/
+/* codeglow */
+code {
+  text-shadow: 
+    0 2px 26px currentColor,
+    0 2px 6px currentColor;
+filter: saturate(2);
+}
+pre .hljs {
+    background-color: black;
+    padding: 20px;
+}
+/* readability perks: -----------------------------------------*/
+:where([data-list-item-id^=chat-messages___]) {
+    background: rgba(0, 0, 0, 0.267);
+}
+[class^=standardSidebarView__] {
+  background: rgba(0, 0, 0, calc(var(--background-shading) * 0.3));
+}
+[class*="standardSidebarView"] [class*="sidebar"] [class*="side"] [class*="item"]
+ {
+  background: rgba(0, 0, 0, calc(var(--background-shading) * 0.8));
+}
+[class*=contentColumnDefault__]:has([class^=settingsPage_]) {
+  background: rgba(0, 0, 0, calc(var(--background-shading) * 0.3));
+}
+[class*=listItem__]:not(:has([class*=icon]), :has([class*=folder])):has([draggable=true]) {
+  background-color: #000000;
+}
+[class^=wrapper_]:has([class^=call]) {
+  background: #000000ab;
+}
+/* ------------------------------------------------------------*/
+/* Watermark*/
+[class*=wordmark__] svg, [class*=wordmark__]::before, [id*=nitro] [class*=Card] {
+    display: none;
+}
+
+/* Display */
+[class^=footer__] {
+    display: none !important;
+}
+[class^=wordmark]::after {
+    top:0px;
+    left: 1px;
+    position: relative;
+    content: "";
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-image: url('https://files.catbox.moe/vqb3sw.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
